@@ -1,31 +1,19 @@
-import 'package:equatable/equatable.dart';
 import 'package:wether_app/domain/model/weather_model.dart';
 
-class WeatherState extends Equatable{
-  @override
-  List<Object?> get props => [];
+abstract class WeatherState {}
+
+class WeatherInitial extends WeatherState {}
+
+class WeatherLoading extends WeatherState {}
+
+class WeatherLoaded extends WeatherState {
+  final WeatherModel weather;
+
+  WeatherLoaded(this.weather);
 }
 
-class WeatherIsNotSearched extends WeatherState{
+class WeatherError extends WeatherState {
+  final String message;
 
-}
-
-class WeatherIsLoading extends WeatherState{
-
-}
-
-class WeatherIsLoaded extends WeatherState{
-  // ignore: prefer_typing_uninitialized_variables
-  final _weather;
-
-  WeatherIsLoaded(this._weather);
-
-  WeatherModel get getWeather => _weather;
-  
-  @override
-  List<Object?> get props => [_weather];
-}
-
-class WeatherIsNotLoaded extends WeatherState{
-
+  WeatherError(this.message);
 }
