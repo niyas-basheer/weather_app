@@ -7,8 +7,6 @@ A Flutter-based weather application that fetches real-time weather data using th
 - Display weather updates for the current location.
 - Bloc for state management to ensure a smooth user experience.
 
-## Screenshots
-(Add your app screenshots here)
 
 ## Technologies Used
 - **Flutter**: UI framework for building the app.
